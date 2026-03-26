@@ -108,7 +108,9 @@ app.get('/usuarios', (req, res) => {
 });
 
 app.post('/sms', (req, res) => {
-    res.json({ mensaje: "SMS enviado" });
+    const { telefono, mensaje } = req.body;
+    console.log(`Simulación SMS -> Tel: ${telefono}, Mensaje: ${mensaje}`);
+    res.json({ mensaje: "SMS enviado correctamente (simulado)" });
 });
 
 app.get('/audio', (req, res) => {
