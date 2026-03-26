@@ -24,8 +24,8 @@ app.use(express.static('public'));
 
 app.get('/geo', (req, res) => {
     res.json({
-        lat: 25.4381,
-        lng: -100.9737,
+        lat: 25.558259,
+        lng: -100.936683,
         utc: new Date().toUTCString()
     });
 });
