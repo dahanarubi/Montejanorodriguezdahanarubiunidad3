@@ -1,8 +1,28 @@
+let map, marker;
+
 async function geo() {
+    // Llamas a tu API
     const res = await fetch('/geo');
     const data = await res.json();
+
+    // Muestra las coordenadas
     document.getElementById('geo').innerHTML =
-        `Lat: ${data.lat} Lng: ${data.lng} UTC: ${data.utc}`;
+        `Latitud: ${data.lat}° N <br> Longitud: ${data.lng}° O`;
+
+    // Inicializa el mapa solo la primera vez
+    if (!map) {
+        map = L.map('map').setView([data.lat, data.lng], 16); // zoom 16 para ver edificio
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        marker = L.marker([data.lat, data.lng]).addTo(map)
+            .bindPopup('Mi escuela').openPopup();
+    } else {
+        // Si ya existe, solo actualiza la posición del marcador
+        marker.setLatLng([data.lat, data.lng]);
+        map.setView([data.lat, data.lng], 16);
+    }
 }
 
 async function social() {
