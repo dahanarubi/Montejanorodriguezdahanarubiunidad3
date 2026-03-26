@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mashup APIs</title>
+    <script src="app.js"></script>
+</head>
+<body>
+
+<h1>Mashup de APIs</h1>
+
+<h2>Geolocalización</h2>
+<button onclick="geo()">Ubicación</button>
+<div id="geo"></div>
+
+<h2>Redes Sociales</h2>
+<button onclick="social()">Redes</button>
+<div id="social"></div>
+<button onclick="publicaciones()">Publicaciones</button>
+<div id="posts"></div>
+
+<h2>Ecommerce Buscador</h2>
+<input id="busqueda" placeholder="Buscar producto">
+<button onclick="buscarProducto()">Buscar</button>
+<div id="resultados"></div>
+
+<h2>Base de Datos</h2>
+<input id="nombre" placeholder="Nombre">
+<input id="usuario" placeholder="Usuario">
+<button onclick="guardar()">Guardar</button>
+<button onclick="verUsuarios()">Ver usuarios</button>
+<div id="listaUsuarios"></div>
+
+<h2>SMS</h2>
+<button onclick="sms()">Enviar SMS</button>
+
+<h2>Audio</h2>
+<button onclick="audio()">Cargar audio</button>
+<br>
+<audio id="player" controls></audio>
+
+</body>
+</html>
