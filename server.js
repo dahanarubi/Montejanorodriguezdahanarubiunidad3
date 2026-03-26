@@ -113,9 +113,10 @@ app.post('/sms', (req, res) => {
     res.json({ mensaje: "SMS enviado correctamente (simulado)" });
 });
 
-app.get('/audio', (req, res) => {
+// Endpoint para video (API externa)
+app.get('/video', (req, res) => {
     res.json({
-        audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        video: "https://www.w3schools.com/html/mov_bbb.mp4"
     });
 });
 
