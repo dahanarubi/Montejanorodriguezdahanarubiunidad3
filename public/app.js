@@ -95,8 +95,12 @@ async function sms() {
     alert(data.mensaje);
 }
 
-async function audio() {
-    const res = await fetch('/audio');
+async function video() {
+    const res = await fetch('/video'); // Llamada a nuestra "API"
     const data = await res.json();
-    document.getElementById('player').src = data.audio;
+
+    const player = document.getElementById('playerVideo');
+    player.src = data.video; // Asigna la URL del JSON
+    player.load(); // Recarga el video
+    player.play(); // Opcional: inicia automáticamente
 }
