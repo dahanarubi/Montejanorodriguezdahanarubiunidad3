@@ -82,8 +82,17 @@ async function verUsuarios() {
 }
 
 async function sms() {
-    await fetch('/sms', { method: 'POST' });
-    alert("SMS enviado");
+    const telefono = document.getElementById('telefono').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    const res = await fetch('/sms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ telefono, mensaje })
+    });
+
+    const data = await res.json();
+    alert(data.mensaje);
 }
 
 async function audio() {
