@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>Mashup APIs</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
 
@@ -12,6 +14,7 @@
 <h2>Geolocalización</h2>
 <button onclick="geo()">Ubicación</button>
 <div id="geo"></div>
+<div id="map" style="height:400px; margin-top:10px;"></div>
 
 <h2>Redes Sociales</h2>
 <button onclick="social()">Redes</button>
