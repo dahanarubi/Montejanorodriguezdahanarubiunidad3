@@ -1,1 +1,101 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+/* Fondo y contenedor */
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #1e40af;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Botones */
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Inputs */
+input {
+    padding: 8px 12px;
+    margin: 5px 5px 10px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Divs de resultados */
+#geo, #social, #posts, #resultados, #listaUsuarios {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+/* Publicaciones y productos */
+#posts div, #resultados div {
+    background-color: #f1f5f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+#posts h3, #resultados h3 {
+    color: #1e3a8a;
+}
+
+/* Videos y audio */
+video, audio {
+    display: block;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Links */
+a {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+    input {
+        width: 100%;
+    }
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
