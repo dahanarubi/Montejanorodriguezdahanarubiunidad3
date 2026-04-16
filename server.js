@@ -71,7 +71,7 @@ app.get('/buscar', async (req, res) => {
             nombre: p.title,
             precio: p.price,
             imagen: p.thumbnail,
-            link: '#'
+            link: `https://dummyjson.com/products/${p.id}`
         }));
 
         res.json(productos);
@@ -81,6 +81,7 @@ app.get('/buscar', async (req, res) => {
         res.json([]);
     }
 });
+
 // Endpoint para guardar usuario en la base de datos
 app.post('/usuario', (req, res) => {
     const { nombre, usuario } = req.body;
@@ -113,10 +114,9 @@ app.post('/sms', (req, res) => {
     res.json({ mensaje: "SMS enviado correctamente (simulado)" });
 });
 
-// Endpoint para video (API externa)
 app.get('/video', (req, res) => {
     res.json({
-        video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        video: "https://www.w3schools.com/html/mov_bbb.mp4" // ejemplo público en MP4
     });
 });
 
