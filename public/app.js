@@ -115,12 +115,23 @@ async function sms() {
     alert(data.mensaje);
 }
 
-async function video() {
-    const res = await fetch('/video'); // Llamada a nuestra "API"
+async function cargarVideo() {
+    const res = await fetch('/video');
     const data = await res.json();
+    const video = document.getElementById('playerVideo');
+    video.src = data.video;
+    video.load(); // recarga el video
+    video.play(); // opcional: que empiece a reproducirse automáticamente
+}
 
-    const player = document.getElementById('playerVideo');
-    player.src = data.video; // Asigna la URL del JSON
-    player.load(); // Recarga el video
-    player.play(); // Opcional: inicia automáticamente
+function mostrar(id) {
+    let secciones = document.querySelectorAll('.seccion');
+    secciones.forEach(sec => sec.style.display = 'none');
+
+    document.getElementById(id).style.display = 'block';
+}
+
+// Mostrar una por defecto
+window.onload = () => {
+    mostrar('geoSec');
 }
