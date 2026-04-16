@@ -1,101 +1,149 @@
-/* Reset básico */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fondo y contenedor */
 body {
-    background-color: #f0f4f8;
-    color: #333;
-    padding: 20px;
-}
-
-h1 {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fdf2f4; /* rosa MUY claro */
+    color: #1f2937;
+    padding: 30px;
     text-align: center;
-    color: #1e3a8a;
-    margin-bottom: 30px;
 }
 
-h2 {
-    color: #1e40af;
-    margin-top: 25px;
-    margin-bottom: 10px;
+/* Título */
+h1 {
+    margin-bottom: 25px;
+    color: #881337; /* vino elegante */
 }
 
-/* Botones */
-button {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    margin: 5px 0;
-    border-radius: 6px;
+/* MENU */
+.menu {
+    margin-bottom: 25px;
+}
+
+.menu button {
+    background: #fce7f3; /* rosa pastel claro */
+    border: 1px solid #fbcfe8;
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    color: #9d174d;
+    transition: 0.2s;
 }
 
-button:hover {
-    background-color: #1d4ed8;
+.menu button:hover {
+    background: #fbcfe8;
+}
+
+/* SECCIONES */
+.seccion {
+    display: none;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 650px;
+    margin: auto;
+    border: 1px solid #f3e8ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Subtítulos */
+h2 {
+    margin-bottom: 15px;
+    color: #9d174d;
 }
 
 /* Inputs */
 input {
-    padding: 8px 12px;
-    margin: 5px 5px 10px 0;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    width: 200px;
-}
-
-/* Divs de resultados */
-#geo, #social, #posts, #resultados, #listaUsuarios {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 15px;
-}
-
-/* Publicaciones y productos */
-#posts div, #resultados div {
-    background-color: #f1f5f9;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    width: 220px;
+}
+
+input:focus {
+    border-color: #f9a8d4;
+    outline: none;
+}
+
+/* Botones internos */
+.seccion button {
+    background: #be185d; /* acento elegante */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.seccion button:hover {
+    background: #9d174d;
+}
+
+/* Contenido dinámico */
+#posts div, #resultados div {
+    background: #fff1f2;
+    border: 1px solid #fce7f3;
+    padding: 10px;
+    margin-bottom: 8px;
     border-radius: 6px;
 }
 
-#posts h3, #resultados h3 {
-    color: #1e3a8a;
-}
-
-/* Videos y audio */
-video, audio {
-    display: block;
+/* Mapa */
+#map {
+    height: 350px;
     margin-top: 10px;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* Links */
-a {
-    color: #1d4ed8;
+/* Video */
+video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.social-buttons {
+    margin-top: 15px;
+}
+
+/* BOTONES GENERALES */
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
     text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    transition: 0.2s;
 }
 
-a:hover {
-    text-decoration: underline;
+/* COLORES POR RED */
+.facebook {
+    background-color: #1877f2;
 }
 
-/* Responsivo */
-@media (max-width: 700px) {
-    input {
-        width: 100%;
-    }
-    video {
-        width: 100%;
-        height: auto;
-    }
+.instagram {
+    background-color: #e1306c;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+/* HOVER */
+.btn-social:hover {
+    opacity: 0.85;
 }
