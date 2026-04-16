@@ -1,48 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Mashup APIs</title>
+
+    <!-- Leaflet -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
     <script src="app.js" defer></script>
 </head>
+
 <body>
 
-<h1>Mashup de APIs</h1>
+<h1> Mashup de APIs</h1>
 
-<h2>Geolocalización</h2>
-<button onclick="geo()">Ubicación</button>
-<div id="geo"></div>
-<div id="map" style="height:400px; margin-top:10px;"></div>
+<!-- MENU -->
+<div class="menu">
+    <button onclick="mostrar('geoSec')">📍 Geolocalización</button>
+    <button onclick="mostrar('socialSec')">📱 Redes</button>
+    <button onclick="mostrar('ecomSec')">🛒 Ecommerce</button>
+    <button onclick="mostrar('dbSec')">💾 Usuarios</button>
+    <button onclick="mostrar('smsSec')">📩 SMS</button>
+    <button onclick="mostrar('videoSec')">🎬 Streaming</button>
+</div>
 
-<h2>Redes Sociales</h2>
-<button onclick="social()">Redes</button>
-<div id="social"></div>
-<button onclick="publicaciones()">Publicaciones</button>
+<!-- SECCIÓN GEO -->
+<div id="geoSec" class="seccion">
+    <h2>Geolocalización</h2>
+    <button onclick="geo()">Obtener ubicación</button>
+    <div id="geo"></div>
+    <div id="map"></div>
+</div>
+
+<!-- SECCIÓN REDES -->
+<div id="socialSec" class="seccion">
+    <h2>Redes Sociales</h2>
+
+    <button onclick="publicaciones()">Ver publicaciones</button>
+
+    <div id="social" class="social-buttons">
+    
+    <a href="https://www.facebook.com" target="_blank" class="btn-social facebook">
+        <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+
+    <a href="https://www.instagram.com" target="_blank" class="btn-social instagram">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <a href="https://twitter.com" target="_blank" class="btn-social twitter">
+        <i class="fab fa-twitter"></i> Twitter
+    </a>
+</div>
 <div id="posts"></div>
 
-<h2>Ecommerce Buscador</h2>
-<input id="busqueda" placeholder="Buscar producto">
-<button onclick="buscarProducto()">Buscar</button>
-<div id="resultados"></div>
+</div>
 
-<h2>Base de Datos</h2>
-<input id="nombre" placeholder="Nombre">
-<input id="usuario" placeholder="Usuario">
-<button onclick="guardar()">Guardar</button>
-<button onclick="verUsuarios()">Ver usuarios</button>
-<div id="listaUsuarios"></div>
+<!-- SECCIÓN ECOMMERCE -->
+<div id="ecomSec" class="seccion">
+    <h2>Buscador de productos</h2>
+    <input id="busqueda" placeholder="Buscar producto...">
+    <button onclick="buscarProducto()">Buscar</button>
+    <div id="resultados"></div>
+</div>
 
-<h2>SMS</h2>
-<input id="telefono" placeholder="Teléfono">
-<input id="mensaje" placeholder="Mensaje">
-<button onclick="sms()">Enviar SMS</button>
+<!-- SECCIÓN USUARIOS -->
+<div id="dbSec" class="seccion">
+    <h2>Usuarios</h2>
+    <input id="nombre" placeholder="Nombre">
+    <input id="usuario" placeholder="Usuario">
+    <br>
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="verUsuarios()">Ver usuarios</button>
+    <div id="listaUsuarios"></div>
+</div>
 
-<h2>Video</h2>
-<button onclick="video()">Cargar video</button>
-<br>
-<video id="playerVideo" width="640" height="360" controls></video>
+<!-- SECCIÓN SMS -->
+<div id="smsSec" class="seccion">
+    <h2>Enviar SMS</h2>
+    <input id="telefono" placeholder="Teléfono">
+    <input id="mensaje" placeholder="Mensaje">
+    <button onclick="sms()">Enviar</button>
+</div>
+
+<!-- SECCIÓN VIDEO -->
+<div id="videoSec" class="seccion">
+    <h2>Video Streaming</h2>
+    <button onclick="cargarVideo()">Cargar video</button>
+    <br><br>
+    <video id="playerVideo" controls></video>
+</div>
 
 </body>
 </html>
